@@ -75,6 +75,7 @@ function shotProb() {
     alert('Shot Made')
   } else {
     alert('Ball Missed')
+    gamePlay()
   }
 }
 

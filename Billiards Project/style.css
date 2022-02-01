@@ -1,0 +1,45 @@
+header{
+    width:100vw;
+    height:200px;
+    background-color:grey;
+  }
+  nav{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    word-spacing: 2px;
+    padding:15px;
+    color:white;
+    border: 5px;
+  }
+  
+  button {
+    align-items: bottom
+  }
+  
+  .parent{
+    padding:20px;
+    display:flex;
+    
+  }
+  .child{
+    border: solid green;
+    flex:1;
+    width:200px;
+    height:200px;
+    margin:10px;
+  }
+  #cue {
+  background-color: #009C34;
+  background-image: url("https://mrbilliard.com/wp-content/uploads/2018/11/Red-Dot-Belgian-Aramith-Cue-Ball_31-725_R.jpg");
+  background-size: 170px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  #cue {
+   padding: 50px 20px; 
+  }
+  
