@@ -25,27 +25,25 @@ for (let ball = 0; ball < 9; ball++) {
 }
 console.log(objectBall)
 
-
-
 let gamePlayBot = () => {
-  shotProbBot()
   if (objectBall.length >= 1) {
+    shotProbBot()
     objectBall.shift()
-    ifWin()
     console.log('Shot Sucessful')
   } else if (objectBall.length < 1) {
-    alert('That was the winning 9-ball Shot!')
+    alert('You made the 9-Ball. You WON!!')
+    ifWin()
   }
 }
 
 let gamePlayPlayer = () => {
-  shotProbPlayer()
   if (objectBall.length >= 1) {
+    shotProbPlayer()
     objectBall.shift()
-    ifWin()
     console.log('Shot Sucessful')
   } else if (objectBall.length < 1) {
-    alert('That was the winning 9-ball Shot!')
+    alert('They made the 9-Ball. You lost!')
+    ifWin()
   }
 }
 
@@ -72,7 +70,7 @@ if (gameBegin <= 50) {
 
 function ifWin() {
   if (objectBall.length < 1) {
-    alert('That was the winning 9-ball Shot!')
+    alert('The game is over. Click if you would like to play again.')
     window.location.reload()
     //https://www.javatpoint.com/javascript-reload-method#:~:text=In%20JavaScript%2C%20the%20reload(),does%20not%20return%20any%20value.
   }
@@ -94,5 +92,4 @@ function shotProbBot() {
     alert('They missed the shot!')
   }
 }
-
 
