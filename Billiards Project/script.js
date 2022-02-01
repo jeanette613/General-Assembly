@@ -8,11 +8,11 @@ class BallPosition {
     let turnBegin = Math.floor((Math.random() * 100) + 1);
     if (turnBegin <= 50) {
       //this.scratch = .1
-      this.score = .7
+      this.score = .6
       this.miss = .3
     } else {
       //this.scratch = .4
-      this.score = .8
+      this.score = .5
       this.miss = .2
     }
   }
@@ -26,8 +26,9 @@ for (let ball = 0; ball < 9; ball++) {
 console.log(objectBall)
 
 
-let gamePlay = () => {
-  shotProb()
+
+let gamePlayBot = () => {
+  shotProbBot()
   if (objectBall.length >= 1) {
     objectBall.shift()
     ifWin()
@@ -35,10 +36,17 @@ let gamePlay = () => {
   } else if (objectBall.length < 1) {
     alert('That was the winning 9-ball Shot!')
   }
-  else if (objectBall.length < 1) {
-    console.log('Game Over')
-  }
+}
 
+let gamePlayPlayer = () => {
+  shotProbPlayer()
+  if (objectBall.length >= 1) {
+    objectBall.shift()
+    ifWin()
+    console.log('Shot Sucessful')
+  } else if (objectBall.length < 1) {
+    alert('That was the winning 9-ball Shot!')
+  }
 }
 
 const btn = document.getElementById('Center-Shot');
@@ -48,7 +56,7 @@ function center() {
   btnPress = 1
   console.log('Center')
   console.log(btnPress)
-  gamePlay()
+  gamePlayPlayer()
 }
 //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_random3
 let gameBegin = Math.floor((Math.random() * 100) + 1);
@@ -59,7 +67,7 @@ if (gameBegin <= 50) {
 } else {
   console.log('botTurn')
   alert('You lost the lag. The other player goes first!')
-  gamePlay()
+  gamePlayBot()
 }
 
 function ifWin() {
@@ -70,14 +78,21 @@ function ifWin() {
   }
 }
 
-function shotProb() {
+function shotProbPlayer() {
   if (Math.random() < objectBall[0].score) {
-    alert('Shot Made')
+    alert('Shot Made!')
   } else {
-    alert('Ball Missed')
-    gamePlay()
+    alert('You missed your shot.')
+    gamePlayBot()
   }
 }
-
+function shotProbBot() {
+  if (Math.random() < objectBall[0].score) {
+    alert('The opponant made their shot.')
+    gamePlayBot()
+  } else {
+    alert('They missed the shot!')
+  }
+}
 
 
